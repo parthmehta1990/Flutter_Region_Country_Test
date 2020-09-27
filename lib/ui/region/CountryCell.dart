@@ -32,7 +32,7 @@ class _CountryCellState extends State<CountryCell> {
         ),
         child: InkWell(
           onTap: (){
-            
+
           },
           child: Padding(
             padding:
