@@ -31,8 +31,8 @@ class _CountryCellState extends State<CountryCell> {
           ),
         ),
         child: InkWell(
+          splashColor: Colors.black.withOpacity(0.7),
           onTap: (){
-
           },
           child: Padding(
             padding:
@@ -40,14 +40,17 @@ class _CountryCellState extends State<CountryCell> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-              SvgPicture.network(
-                widget.countryModelEntity.flag,
-              //width: MediaQuery.of(context).size.width,
-              height: 100,
-              placeholderBuilder: (BuildContext context) => Container(
-                  padding: const EdgeInsets.all(30.0),
-                  child: const CircularProgressIndicator()),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(8.0,0,8.0,0),
+                child: SvgPicture.network(
+                  widget.countryModelEntity.flag,
+                //width:(MediaQuery.of(context).size.width/2)-100,
+                height: 100,
+                placeholderBuilder: (BuildContext context) => Container(
+                    padding: const EdgeInsets.all(30.0),
+                    child: const CircularProgressIndicator()),
             ),
+              ),
                 Padding(
                   padding: EdgeInsets.all(10.0),
                   child: Text(
