@@ -37,7 +37,7 @@ class _MyCotinentState extends State<Continents> {
       List<ContinentModel> updatedDataList=usersList.toSet().toList();
 
       updatedDataList.removeWhere((element) => element.region == '');
-      
+
       return updatedDataList.toSet().toList();
     } else {
       throw Exception('Failed to load data from internet');
