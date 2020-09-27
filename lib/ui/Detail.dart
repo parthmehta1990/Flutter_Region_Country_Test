@@ -155,7 +155,7 @@ class Detail extends StatelessWidget {
                     Text(
                       '' +
                           detail.currencies[0].symbol +
-                          " " +
+                          " - " +
                           detail.currencies[0].name,
                       style: TextStyle(fontSize: 16, color: Colors.black87),
                     )

@@ -29,13 +29,16 @@ class _MyCotinentState extends State<Continents> {
 
       List<ContinentModel> usersList = jsonItems.map<ContinentModel>((json) {
         print("json ${json['region']}");
-
         return ContinentModel.fromJson(json);
       }).toList();
 
       print("data=${usersList.toSet().toList()}");
 
-      return usersList.toSet().toList();
+      List<ContinentModel> updatedDataList=usersList.toSet().toList();
+
+      updatedDataList.removeWhere((element) => element.region == '');
+      
+      return updatedDataList.toSet().toList();
     } else {
       throw Exception('Failed to load data from internet');
     }
@@ -62,7 +65,7 @@ class _MyCotinentState extends State<Continents> {
                       child: Text(user.region),
                       //color: user.userColor,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10.0),
+                          borderRadius: BorderRadius.circular(10.0),
                           color: user.userColor,
                           border: Border.all(width: 1, color: Colors.black38)),
                     ),
