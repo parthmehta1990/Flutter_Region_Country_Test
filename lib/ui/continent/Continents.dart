@@ -48,7 +48,7 @@ class _MyCotinentState extends State<Continents> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: Text('Continent'),
       ),
       body: FutureBuilder<List<ContinentModel>>(
         future: fetchJSONData(),
@@ -62,7 +62,7 @@ class _MyCotinentState extends State<Continents> {
                   (user) => ListTile(
                     title: Container(
                       padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                      child: Text(user.region),
+                      child: Text(user.region,style: TextStyle(color: Colors.white,fontSize: 16),),
                       //color: user.userColor,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10.0),

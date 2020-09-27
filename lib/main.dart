@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'Model/CountryModelEntity.dart';
 import 'CommonComponent/ComComp.dart';
 import 'API/Constants.dart';
@@ -6,7 +7,12 @@ import 'API/RegionAPI.dart';
 import 'ui/continent/Continents.dart';
 
 void main() {
-  runApp(MyApp());
+
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown])
+      .then((_) {
+    runApp(new MyApp());
+  });
 }
 
 class MyApp extends StatelessWidget {

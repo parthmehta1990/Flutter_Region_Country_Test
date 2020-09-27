@@ -57,7 +57,7 @@ class _CountryCellState extends State<CountryCell> {
                     widget.countryModelEntity.name,
                     textAlign: TextAlign.center,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontWeight: FontWeight.w500,color:Colors.black45),
+                    style: TextStyle(fontWeight: FontWeight.w700,color:Colors.black54),
                   ),
                 ),
               ],
