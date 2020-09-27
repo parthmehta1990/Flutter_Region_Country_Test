@@ -8,7 +8,8 @@ import '../Detail.dart';
 class Country extends StatefulWidget {
 
   final String continent;
-  Country({Key key,  @required this.continent}) : super(key: key);
+  Color primaryColor;
+  Country({Key key,  @required this.continent,@required this.primaryColor}) : super(key: key);
 
 
 
@@ -39,7 +40,7 @@ class _MyHomePageState extends State<Country> {
             builder: (context, snapshot) {
               return snapshot.connectionState == ConnectionState.done
                   ? snapshot.hasData
-                  ? ComComp.homeGrid(snapshot, gridClicked)
+                  ? ComComp.homeGrid(snapshot, gridClicked,widget.primaryColor)
                   : ComComp.retryButton(fetch)
                   : ComComp.circularProgress();
             },
@@ -62,10 +63,12 @@ class _MyHomePageState extends State<Country> {
 
 gridClicked(BuildContext context, CountryModelEntity cellModel) {
   // Grid Click
+
+  print("item clicked=${cellModel.name}");
   Navigator.push(
     context,
     MaterialPageRoute(
-      builder: (context) => Detail(),
+      builder: (context) => Detail(detail: cellModel),
     ),
   );
 

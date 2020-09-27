@@ -4,13 +4,20 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 
 class CountryCell extends StatelessWidget {
-  const CountryCell(this.countryModelEntity);
+
+  CountryCell(this.countryModelEntity,this.primaryColor);
   @required
   final CountryModelEntity countryModelEntity;
+  @required
+  Color primaryColor;
+
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Container(
+        decoration: BoxDecoration(
+          color: primaryColor.withOpacity(0.5)
+        ),
         child: Padding(
           padding:
           new EdgeInsets.only(left: 0.0, right: 0.0, bottom: 0.0, top: 0.0),

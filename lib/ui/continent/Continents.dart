@@ -60,14 +60,13 @@ class _MyCotinentState extends State<Continents> {
                     title: Container(
                       padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                       child: Text(user.region),
-                      color: Colors
-                          .primaries[Random().nextInt(Colors.primaries.length)],
+                      color: user.userColor,
                     ),
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Country(continent: user.region),
+                          builder: (context) => Country(continent: user.region,primaryColor:user.userColor),
                         ),
                       );
                       print(user.region);

@@ -51,7 +51,7 @@ class ComComp {
   }
 
   static Padding homeGrid(
-      AsyncSnapshot<List<CountryModelEntity>> snapshot, Function gridClicked) {
+      AsyncSnapshot<List<CountryModelEntity>> snapshot, Function gridClicked,Color primaryColor) {
     return Padding(
       padding:
       EdgeInsets.only(left: 05.0, right: 05.0, bottom: 10.0, top: 0.0),
@@ -62,7 +62,7 @@ class ComComp {
         SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemBuilder: (BuildContext context, int index) {
           return GestureDetector(
-            child: CountryCell(snapshot.data[index]),
+            child: CountryCell(snapshot.data[index],primaryColor),
             onTap: () => gridClicked(context, snapshot.data[index]),
           );
         },
