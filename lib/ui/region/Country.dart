@@ -33,18 +33,16 @@ class _MyHomePageState extends State<Country> {
     return new Scaffold(
       backgroundColor: Colors.white,
       appBar: ComComp.getAppBar(COLORS.APP_THEME_COLOR, "Country"),
-      body: Center(
-        child: Container(
-          child: FutureBuilder<List<CountryModelEntity>>(
-            future: RegionAPI.fetchHomeData(widget.continent),
-            builder: (context, snapshot) {
-              return snapshot.connectionState == ConnectionState.done
-                  ? snapshot.hasData
-                  ? ComComp.homeGrid(snapshot, gridClicked,widget.primaryColor)
-                  : ComComp.retryButton(fetch)
-                  : ComComp.circularProgress();
-            },
-          ),
+      body: Container(
+        child: FutureBuilder<List<CountryModelEntity>>(
+          future: RegionAPI.fetchHomeData(widget.continent),
+          builder: (context, snapshot) {
+            return snapshot.connectionState == ConnectionState.done
+                ? snapshot.hasData
+                ? ComComp.homeGrid(snapshot, gridClicked,widget.primaryColor)
+                : ComComp.retryButton(fetch)
+                : ComComp.circularProgress();
+          },
         ),
       ),
     );

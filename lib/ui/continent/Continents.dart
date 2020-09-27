@@ -60,13 +60,19 @@ class _MyCotinentState extends State<Continents> {
                     title: Container(
                       padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                       child: Text(user.region),
-                      color: user.userColor,
+                      //color: user.userColor,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.0),
+                          color: user.userColor,
+                          border: Border.all(width: 1, color: Colors.black38)),
                     ),
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Country(continent: user.region,primaryColor:user.userColor),
+                          builder: (context) => Country(
+                              continent: user.region,
+                              primaryColor: user.userColor),
                         ),
                       );
                       print(user.region);

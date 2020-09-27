@@ -35,9 +35,11 @@ class ComComp {
     );
   }
 
-  static CircularProgressIndicator circularProgress() {
-    return CircularProgressIndicator(
-      valueColor: new AlwaysStoppedAnimation<Color>(COLORS.APP_THEME_COLOR),
+  static Center circularProgress() {
+    return Center(
+      child: CircularProgressIndicator(
+        valueColor: new AlwaysStoppedAnimation<Color>(COLORS.APP_THEME_COLOR),
+      ),
     );
   }
 
@@ -63,7 +65,9 @@ class ComComp {
         itemBuilder: (BuildContext context, int index) {
           return GestureDetector(
             child: CountryCell(snapshot.data[index],primaryColor),
-            onTap: () => gridClicked(context, snapshot.data[index]),
+            onTap: (){
+              gridClicked(context, snapshot.data[index]);
+            },
           );
         },
       ),
