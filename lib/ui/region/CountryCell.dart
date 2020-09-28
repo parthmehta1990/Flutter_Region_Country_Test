@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../../Model/CountryModelEntity.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../Detail.dart';
+
 
 class CountryCell extends StatefulWidget {
 
@@ -33,6 +35,12 @@ class _CountryCellState extends State<CountryCell> {
         child: InkWell(
           splashColor: Colors.black.withOpacity(0.7),
           onTap: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Detail(detail:  widget.countryModelEntity),
+              ),
+            );
           },
           child: Padding(
             padding:

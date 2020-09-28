@@ -62,12 +62,12 @@ class _MyHomePageState extends State<Country> {
 gridClicked(BuildContext context, CountryModelEntity cellModel) {
   // Grid Click
 
-  print("item clicked=${cellModel.name}");
+ /* print("item clicked=${cellModel.name}");
   Navigator.push(
     context,
     MaterialPageRoute(
       builder: (context) => Detail(detail: cellModel),
     ),
-  );
+  );*/
 
 }
